@@ -1,4 +1,4 @@
-class Transform < Formula
+class Transpose < Formula
   desc "Transposes tables or matrices from the command line"
   homepage "https://github.com/sanderploegsma/transpose"
   url "https://github.com/sanderploegsma/transpose/releases/download/v0.1/transpose_v0.1_darwin_amd64.tar.gz"
