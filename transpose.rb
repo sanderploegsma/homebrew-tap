@@ -5,20 +5,20 @@
 class Transpose < Formula
   desc "Transposes tables or matrices from the command line"
   homepage "https://github.com/sanderploegsma/transpose"
-  version "0.3.3"
+  version "0.4.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/sanderploegsma/transpose/releases/download/v0.3.3/transpose_darwin_x86_64.tar.gz"
-      sha256 "75ee0cd6c3698720e648936df04c89fffe93751fd033b46d12e61420fe729df2"
+    if Hardware::CPU.arm?
+      url "https://github.com/sanderploegsma/transpose/releases/download/v0.4.0/transpose_0.4.0_darwin_arm64.tar.gz"
+      sha256 "9626fc8607354703d2ab5feda73b33915c58242d228167f835f2f78cda8b7262"
 
       def install
         bin.install "transpose"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/sanderploegsma/transpose/releases/download/v0.3.3/transpose_darwin_arm64.tar.gz"
-      sha256 "30891ea03a93b59c832988e0cb31d1491ddf95831575a815e8e7e4c38d53ca3a"
+    if Hardware::CPU.intel?
+      url "https://github.com/sanderploegsma/transpose/releases/download/v0.4.0/transpose_0.4.0_darwin_amd64.tar.gz"
+      sha256 "d0becfa465c3eddcd496ba96fa9573ce0a53bb7fe7df1b08e29b167732358e88"
 
       def install
         bin.install "transpose"
@@ -28,16 +28,16 @@ class Transpose < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sanderploegsma/transpose/releases/download/v0.3.3/transpose_linux_arm64.tar.gz"
-      sha256 "c3ecf831751aaa1d53372db40944bc1d695d156df7a8564ca2cb92226e6dd326"
+      url "https://github.com/sanderploegsma/transpose/releases/download/v0.4.0/transpose_0.4.0_linux_arm64.tar.gz"
+      sha256 "bf8fa6825ebe9510f42eafc72218b115e3085ef0257105530c6b578c2c00536c"
 
       def install
         bin.install "transpose"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/sanderploegsma/transpose/releases/download/v0.3.3/transpose_linux_x86_64.tar.gz"
-      sha256 "fdcc2fb79df06468e498552cd7b44e8d4075e426d24a5c929b976987c92dcaf0"
+      url "https://github.com/sanderploegsma/transpose/releases/download/v0.4.0/transpose_0.4.0_linux_amd64.tar.gz"
+      sha256 "fde7f4fde02bbc460a42b81ef8eab037ae21ba8aaf39f2c50d313d0cc69fb256"
 
       def install
         bin.install "transpose"
