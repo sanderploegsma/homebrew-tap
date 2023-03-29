@@ -5,21 +5,21 @@
 class KubectlSnap < Formula
   desc "Delete half of the pods in a Kubernetes cluster or namespace"
   homepage "https://github.com/sanderploegsma/kubectl-snap"
-  version "0.3.0"
+  version "0.4.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/sanderploegsma/kubectl-snap/releases/download/v0.3.0/kubectl-snap_0.3.0_darwin_amd64.tar.gz"
-      sha256 "8db3d7f38a73534e03e863b132ef047d4772bc353e65aec6262e7259378367be"
+    if Hardware::CPU.arm?
+      url "https://github.com/sanderploegsma/kubectl-snap/releases/download/v0.4.0/kubectl-snap_0.4.0_darwin_arm64.tar.gz"
+      sha256 "12cc7e0c5e66ed71b3a4755eef77a7080def015322844e263e31314c8b3e0d1d"
 
       def install
         bin.install "kubectl-snap"
         bin.install "kubectl_complete-snap"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/sanderploegsma/kubectl-snap/releases/download/v0.3.0/kubectl-snap_0.3.0_darwin_arm64.tar.gz"
-      sha256 "f22385ebb202551763707476c2f89d2232914aaa18cb6ff973fd236dde4e9591"
+    if Hardware::CPU.intel?
+      url "https://github.com/sanderploegsma/kubectl-snap/releases/download/v0.4.0/kubectl-snap_0.4.0_darwin_amd64.tar.gz"
+      sha256 "5eb1739cbfcebadd9f4e24e7c1bbe71c3765e6c0db978682ae0f917a2c83d6de"
 
       def install
         bin.install "kubectl-snap"
@@ -29,18 +29,18 @@ class KubectlSnap < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/sanderploegsma/kubectl-snap/releases/download/v0.3.0/kubectl-snap_0.3.0_linux_amd64.tar.gz"
-      sha256 "19425fb05e8c8281cb7263b7d93965fde388699514bfecb6e5d3561e5acbf020"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/sanderploegsma/kubectl-snap/releases/download/v0.4.0/kubectl-snap_0.4.0_linux_arm64.tar.gz"
+      sha256 "98df90eff37e67a2c937f4d21ea367f82fdfc221b44a84c864c31f73af6ca5bc"
 
       def install
         bin.install "kubectl-snap"
         bin.install "kubectl_complete-snap"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sanderploegsma/kubectl-snap/releases/download/v0.3.0/kubectl-snap_0.3.0_linux_arm64.tar.gz"
-      sha256 "76b78828ff74e47901a1232a6a85c0529a7c623717f8371d2bd85eb9db2ef372"
+    if Hardware::CPU.intel?
+      url "https://github.com/sanderploegsma/kubectl-snap/releases/download/v0.4.0/kubectl-snap_0.4.0_linux_amd64.tar.gz"
+      sha256 "197d985c7bfd8529d77d5917112e24444d2a9f1c0beb2b61df8fc7c0a8d794d8"
 
       def install
         bin.install "kubectl-snap"
