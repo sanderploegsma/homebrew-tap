@@ -5,20 +5,20 @@
 class TransipDyndns < Formula
   desc "Automatically update DNS entries in your TransIP domain with your current public IP address"
   homepage "https://github.com/sanderploegsma/transip-dyndns"
-  version "1.0.0"
+  version "1.0.1"
 
   on_macos do
     on_intel do
-      url "https://github.com/sanderploegsma/transip-dyndns/releases/download/v1.0.0/transip-dyndns_Darwin_x86_64.tar.gz"
-      sha256 "8107eae8b5e12d697280c582ddc45ef4ff39c5efdf2418a6a3e32de605338bcc"
+      url "https://github.com/sanderploegsma/transip-dyndns/releases/download/v1.0.1/transip-dyndns_Darwin_x86_64.tar.gz"
+      sha256 "4d0612832f32feba266de4180bae2d4fb1ff04f1719a311d8182c694a03f3b93"
 
       def install
         bin.install "transip-dyndns"
       end
     end
     on_arm do
-      url "https://github.com/sanderploegsma/transip-dyndns/releases/download/v1.0.0/transip-dyndns_Darwin_arm64.tar.gz"
-      sha256 "d1ff92f221f2adc31c2c7e03b3f02a9131f743db431cf989d71dac34c2d2fe50"
+      url "https://github.com/sanderploegsma/transip-dyndns/releases/download/v1.0.1/transip-dyndns_Darwin_arm64.tar.gz"
+      sha256 "f47f6dd165808d168838278f45988b0f56544f095a2a0871fbce9069e501f773"
 
       def install
         bin.install "transip-dyndns"
@@ -29,8 +29,18 @@ class TransipDyndns < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/sanderploegsma/transip-dyndns/releases/download/v1.0.0/transip-dyndns_Linux_x86_64.tar.gz"
-        sha256 "2042837df8102f80651ebaed883561562fa42169825d06f5e5e3e462bf397893"
+        url "https://github.com/sanderploegsma/transip-dyndns/releases/download/v1.0.1/transip-dyndns_Linux_x86_64.tar.gz"
+        sha256 "1bc813f891e1f071e6b4bbdd018e5ee97b51c781b521c32eb5f7efb5e3a9129e"
+
+        def install
+          bin.install "transip-dyndns"
+        end
+      end
+    end
+    on_arm do
+      if !Hardware::CPU.is_64_bit?
+        url "https://github.com/sanderploegsma/transip-dyndns/releases/download/v1.0.1/transip-dyndns_Linux_armv6.tar.gz"
+        sha256 "14dc1e2f7bbae71fef118ce25fb9557229a33a1164205109a5459b81cb0f95f2"
 
         def install
           bin.install "transip-dyndns"
@@ -39,8 +49,8 @@ class TransipDyndns < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/sanderploegsma/transip-dyndns/releases/download/v1.0.0/transip-dyndns_Linux_arm64.tar.gz"
-        sha256 "eb8c3ffbd922b38bf79d9cb40578d478f2b1eef649a13a73d580b2dd0a09be27"
+        url "https://github.com/sanderploegsma/transip-dyndns/releases/download/v1.0.1/transip-dyndns_Linux_arm64.tar.gz"
+        sha256 "810961f2f1dc1af315985816697285600204cb7023ed7ace6203ee069ca9c1d3"
 
         def install
           bin.install "transip-dyndns"
